@@ -33,13 +33,13 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
     isNaN(amount) ||
     isNaN(countMonths) 
   ) {
-      console.log('Один из параметров сожержит неверное значение');
+      // console.log('Один из параметров сожержит неверное значение');
       return false;
     }
 
     percent = percent / 100 / 12;
     bodyCredit = amount - contribution;
-    monthPayment = (bodyCredit * percent + (percent /  ((Math.pow((1 + percent), countMonths)) - 1)));
+    monthPayment = bodyCredit * (percent + (percent / ((Math.pow((1 + percent), countMonths)) - 1)));
     totalAmount = parseFloat((monthPayment * countMonths).toFixed(2));
 
     return totalAmount;
