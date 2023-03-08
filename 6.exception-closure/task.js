@@ -31,9 +31,9 @@ class Triangle {
         return perimeter;
     }
 
-    get arrea() {
+    get area() {
         const semiPerimeter = this.perimeter / 2;
-        const square = Math.sqrt((semiPerimeter * (semiPerimeter - this.a) * (semiPerimeter - this.b) * (semiPerimeter - this.c))).toFixed(3);
+        const square = parseFloat(Math.sqrt((semiPerimeter * (semiPerimeter - this.a) * (semiPerimeter - this.b) * (semiPerimeter - this.c))).toFixed(3));
         return square;
     }
 }
@@ -50,7 +50,7 @@ function getTriangle(a, b, c) {
             get perimeter() {
                 return "Ошибка! Треугольник не существует";
             },
-            get arrea() {
+            get area() {
                 return "Ошибка! Треугольник не существует"; 
             }
 
